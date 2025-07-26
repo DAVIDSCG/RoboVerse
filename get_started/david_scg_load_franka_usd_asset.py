@@ -52,15 +52,13 @@ simulation_app = launch_isaaclab()
 ### 3. Normal code
 #########################################
 
-import omni
 import isaaclab.sim as sim_utils  # for isaaclab2 API
-from loguru import logger as log
+import omni
 from isaaclab.assets import (
     Articulation,
     ArticulationCfg,
-    RigidObject,
-    RigidObjectCfg,
 )
+from loguru import logger as log
 from pxr import PhysxSchema
 from rich.logging import RichHandler
 
@@ -100,11 +98,11 @@ def design_scene():
             )
         )
 
-
     # tests
     if args.fix_texture:
         fixer = ShaderFixer(args.usd_path, "/World/panda")
         fixer.fix_all()
+
 
 # 目前不执行
 def design_ground():
