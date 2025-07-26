@@ -1,5 +1,4 @@
-""" the script is edited from get_started/2_add_new_robot.py by the author of Sun Chunguang"""
-
+"""the script is edited from get_started/2_add_new_robot.py by the author of Sun Chunguang"""
 
 from __future__ import annotations
 
@@ -22,13 +21,14 @@ rootutils.setup_root(__file__, pythonpath=True)
 log.configure(handlers=[{"sink": RichHandler(), "format": "{message}"}])
 
 from get_started.utils import ObsSaver
-from metasim.cfg.objects import ArticulationObjCfg, PrimitiveCubeCfg, PrimitiveSphereCfg, RigidObjCfg
+from metasim.cfg.objects import PrimitiveCubeCfg, PrimitiveSphereCfg
 from metasim.cfg.robots.franka_cfg import FrankaCfg  # load the Franka robot config
 from metasim.cfg.scenario import ScenarioCfg
 from metasim.cfg.sensors import PinholeCameraCfg
 from metasim.constants import PhysicStateType, SimType
 from metasim.utils import configclass
 from metasim.utils.setup_util import get_sim_env_class
+
 
 @configclass
 class Args:
@@ -95,8 +95,8 @@ init_states = [
                 "rot": torch.tensor([1.0, 0.0, 0.0, 0.0]),
             },
         },
-        "robots":{
-            "my_robot":{
+        "robots": {
+            "my_robot": {
                 "pos": torch.tensor([0.0, 0.0, 1.0]),
                 "rot": torch.tensor([1.0, 0.0, 0.0, 0.0]),
                 "dof_pos": {
@@ -105,7 +105,7 @@ init_states = [
                     "panda_joint3": 0.0,
                     "panda_joint4": -2.356194,
                     "panda_joint5": 0.0,
-                    "panda_joint6": 0,   # old default value: 1.570796
+                    "panda_joint6": 0,  # old default value: 1.570796
                     "panda_joint7": 0.785398,
                     "panda_finger_joint1": 0.04,
                     "panda_finger_joint2": 0.04,
