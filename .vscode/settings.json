@@ -45,7 +45,7 @@
         "dashboard": true,
     },
     "git.ignoredRepositories": [
-        "third_party/IsaacLab",
+        "third_party/IsaacLab2",
         "third_party/pyrep",
     ],
 
